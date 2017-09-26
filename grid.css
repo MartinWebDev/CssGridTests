@@ -1,0 +1,49 @@
+body {
+    font-size: 100%;
+}
+
+#grid {
+    background-color: #DDD;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 200px 2fr 1fr;
+    grid-gap: 0.6rem;
+    grid-template-areas: 
+        "title title title"
+        "side content content"
+        "about copywrite contact";
+}
+
+@media (max-width: 500px) {
+    #grid {
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: 200px 1fr 2fr 1fr;
+        grid-template-areas: 
+            "title title title"
+            "side side side"
+            "content content content"
+            "about copywrite contact";
+    }
+}
+
+@media (min-width: 1000px) {
+    #grid {
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: 200px 1fr 2fr 1fr;
+        grid-template-areas: 
+            "title title title"
+            "side content contact"
+            "about copywrite contact";
+    }
+}
+
+.cell {
+    background-color: #AAA;
+}
+
+#title { grid-area: title; background-color: #115577; }
+#side { grid-area: side; background-color: #54A74E; }
+#content { grid-area: content; background-color: #C24166; }
+#about { grid-area: about; background-color: #8723C0; }
+#copywrite { grid-area: copywrite; background-color: #059059; }
+#contact { grid-area: contact; background-color: #3340A3; }
